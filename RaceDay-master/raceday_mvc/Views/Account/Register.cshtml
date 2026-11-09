@@ -1,0 +1,2 @@
+@model RegisterVm
+@{ViewData["Title"]="Register";}<div class="form-card"><h1>Create your account</h1><form method="post"><div asp-validation-summary="All" class="error"></div><label asp-for="FullName">Full name</label><input asp-for="FullName"/><label asp-for="Email"></label><input asp-for="Email"/><label asp-for="Password"></label><input asp-for="Password"/><label asp-for="Role"></label><select asp-for="Role"><option>Participant</option><option>Organiser</option></select><button class="btn">Register</button></form></div>

@@ -1,0 +1,7 @@
+@model ProfileVm
+@{ ViewData["Title"] = "My profile"; }
+<div class="form-card"><h1>My profile</h1><p>Update the personal details associated with your RaceDay account.</p>
+<form method="post"><div asp-validation-summary="All" class="error"></div>
+<label asp-for="FullName">Full name</label><input asp-for="FullName"/><span asp-validation-for="FullName" class="error"></span>
+<label asp-for="Email"></label><input asp-for="Email"/><span asp-validation-for="Email" class="error"></span>
+<button class="btn">Save changes</button></form></div>

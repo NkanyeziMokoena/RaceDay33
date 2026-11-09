@@ -1,0 +1,2 @@
+@model List<EventVm>
+@{ViewData["Title"]="Events";}<h1>Events</h1><p>Find an event that matches your goals.</p><div class="cards">@foreach(var e in Model){<article class="card"><span class="tag">@e.EventType</span><h2>@e.Name</h2><p>@e.Description</p><p><b>Date:</b> @e.EventDate.ToString("dd MMM yyyy")</p><p><b>Location:</b> @e.Location</p><p><b>Distance:</b> @(e.DistanceKm?.ToString("0.##")??"Varies") km</p><a class="btn" asp-action="Details" asp-route-id="@e.EventId">Details & categories</a></article>}@if(!Model.Any()){<p>No events found.</p>}</div>

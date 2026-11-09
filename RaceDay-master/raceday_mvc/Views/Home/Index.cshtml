@@ -1,0 +1,4 @@
+@model List<EventVm>
+@{ViewData["Title"]="Home";}
+<section class="hero"><p class="eyebrow">RUN • WALK • CYCLE</p><h1>Every race has a story.<br/>Start yours with RaceDay.</h1><p>Discover events, choose your distance and track your results.</p><a class="btn" asp-controller="Events" asp-action="Index">Explore events</a></section>
+<h2>Upcoming events</h2><div class="cards">@foreach(var e in Model){<article class="card"><span class="tag">@e.EventType</span><h3>@e.Name</h3><p>@e.Description</p><p>📅 @e.EventDate.ToString("dd MMM yyyy")</p><p>📍 @e.Location</p><a asp-controller="Events" asp-action="Details" asp-route-id="@e.EventId">View event →</a></article>}@if(!Model.Any()){<p>No events are available yet.</p>}</div>

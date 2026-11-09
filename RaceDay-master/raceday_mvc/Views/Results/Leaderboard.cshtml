@@ -1,0 +1,2 @@
+@model List<ResultVm>
+@{ViewData["Title"]="Leaderboard";}<h1>Category leaderboard</h1><table><thead><tr><th>Position</th><th>Participant</th><th>Bib</th><th>Finish time</th><th>Status</th></tr></thead><tbody>@foreach(var r in Model.OrderBy(x=>x.Position??int.MaxValue)){<tr><td>@(r.Position?.ToString()??"—")</td><td>@r.ParticipantName</td><td>@r.BibNumber</td><td>@(r.FinishTime?.ToString()??"—")</td><td>@r.Status</td></tr>}</tbody></table>@if(!Model.Any()){<p>No results have been recorded for this category.</p>}
